@@ -140,10 +140,10 @@ background-size: 1800% 1800%;
 				str=name_input.value;
 				if (str.length > 1) {
 					for (var i=0;i < arr1.length;i++) {
-						if (arr1[i].indexOf(str) !=-1) {
-							resultArr.push(arr5[i]);
+						if (arr5[i].indexOf(str) !=-1) {
+							resultArr.push(arr1[i]);
 							resultNum.push(arr4[i]);
-							resultPEGI.push(arr5[i]);
+							resultPEGI.push(arr1[i]);
 						}
 					}
 					if (resultArr.length==0) {
