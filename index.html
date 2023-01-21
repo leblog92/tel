@@ -98,18 +98,8 @@ background-size: 1800% 1800%;
 			var data_input;
 			var tab_results=document.getElementById("tab_results");
 			var progress=document.getElementById("progress");
-			var resultArr=[];
-			var resultImg=[];
+			var resultNam=[];
 			var resultNum=[];
-			var resultPEGI=[];
-			var resultCover=[];
-			var resultHist=[];
-			var resultGenre=[];
-			var resultNBJ=[];
-			var resultQual=[];
-			var resultTail=[];
-			var resultLink=[];
-			var resultYou=[];
 			var str=name_input.value;
 			//Import start
 			
@@ -124,7 +114,6 @@ background-size: 1800% 1800%;
 
 			function show() {
 				tab_results.innerHTML="";
-				resultArr=[];
 				name_input.value=name_input.value.toLowerCase();
 				name_input.value=name_input.value.replace("é","e");
 				name_input.value=name_input.value.replace("è","e");
@@ -141,37 +130,27 @@ background-size: 1800% 1800%;
 				if (str.length > 1) {
 					for (var i=0;i < arr1.length;i++) {
 						if (arr5[i].indexOf(str) !=-1) {
-							resultArr.push(arr1[i]);
+							resultNam.push(arr1[i]);
 							resultNum.push(arr4[i]);
-							resultPEGI.push(arr1[i]);
 						}
 					}
-					if (resultArr.length==0) {
+					if (resultNam.length==0) {
 						tab_results.innerHTML="<tr><td style='text-align:center;'>Aucun résultat ...<br><br><img src='TOAD.png' height='300px' width='auto' style='border-radius:10px;'/></td></tr>";
-					} else if (resultArr.length > 1) {
-						tab_results.innerHTML="<tr><td colspan='3' style='text-align:center;font-weight:bold;color:#000'>"+resultArr.length+" résultats</td></tr>";
+					} else if (resultNam.length > 1) {
+						tab_results.innerHTML="<tr><td colspan='3' style='text-align:center;font-weight:bold;color:#000'>"+resultNam.length+" résultats</td></tr>";
 					}
-					for (var k=0;k < resultArr.length;k++) {
-						tab_results.innerHTML +="<tr id='tr"+k+"'><td colspan='3' style='text-align:center;font-weight:bold;'>"+resultArr[k]+" <span class='num'>"+resultNum[k];+"</span></td></tr>";
+					for (var k=0;k < resultNam.length;k++) {
+						tab_results.innerHTML +="<tr id='tr"+k+"'><td colspan='3' style='text-align:center;font-weight:bold;'>"+resultNam[k]+" <span class='num'>"+resultNum[k];+"</span></td></tr>";
 					}
 					tab_results.innerHTML +="<tr onclick='location.reload();'><td style='text-align:center;background:#000;border:2px solid #ddd;color:#fff;' colspan='3'><marquee direction='right'>restart ?</marquee></td></tr>";
-					resultArr=[];
-					resultImg=[];
+					resultNam=[];
 					resultNum=[];
-					resultPEGI=[];
-					resultCover=[];
-					resultHist=[];
-					resultGenre=[];
-					resultNBJ=[];
-					resultQual=[];
-					resultTail=[];
-					resultLink=[];
 				}
 			}
 			name_input.onclick=function out() {
 				logo.style.display="none";
 				name_input.value="";
-				tab_results.innerHTML="<tr><td style='text-align:center;'><marquee scrollamount='12'>Recherche parmi "+arr1.length+" numéros</marquee></td></tr>";
+				tab_results.innerHTML="<tr><td style='text-align:center;'><marquee scrollamount='12'>📞 Recherche parmi "+arr1.length+" numéros de téléphone</marquee></td></tr>";
 			};
 			var count=0;
 
