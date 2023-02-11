@@ -43,7 +43,7 @@
 			span.num{background-color:#333;color:white;border-radius:10px;padding:5px;padding-left:10px;padding-right:10px;font-size:20px;}
 			td{background:#ddd;line-height:1em;border-radius:10px;padding:10px;box-shadow:5px 5px 5px rgba(0,0,0,0.2);}
 			#elibre{position:fixed;bottom:0;right:0;text-align:center;font-size:12px;}
-			.wrapper {height:125%;width:100%;left:0;right:0;top:0;bottom:0;position:absolute;
+			.wrapper {height:100%;width:100%;left:0;right:0;top:0;bottom:0;position:absolute;
 				background:linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
 				background-size:1800% 1800%;background-attachment:fixed;
 				-webkit-animation: rainbow 18s ease infinite;
@@ -166,24 +166,12 @@
 			input.style.visibility="visible";
 			input.addEventListener("keyup",show);
 			
-			document.getElementById("sci").addEventListener("click", function(){
-				name_input.value="sciences";show();
-			});
-			document.getElementById("lit").addEventListener("click", function(){
-				name_input.value="litterature";show();
-			});
-			document.getElementById("jeu").addEventListener("click", function(){
-				name_input.value="jeunesse";show();
-			});
-			document.getElementById("mus").addEventListener("click", function(){
-				name_input.value="musique";show();
-			});
-			document.getElementById("bib").addEventListener("click", function(){
-				name_input.value="bibliotheques de quartier";show();
-			});
-			document.getElementById("cul").addEventListener("click", function(){
-				name_input.value="culture";show();
-			});
+			document.getElementById("sci").addEventListener("click", function(){logo.style.display="none";name_input.value="sciences";show();});
+			document.getElementById("lit").addEventListener("click", function(){logo.style.display="none";name_input.value="litterature";show();});
+			document.getElementById("jeu").addEventListener("click", function(){logo.style.display="none";name_input.value="jeunesse";show();});
+			document.getElementById("mus").addEventListener("click", function(){logo.style.display="none";name_input.value="musique";show();});
+			document.getElementById("bib").addEventListener("click", function(){logo.style.display="none";name_input.value="bibliotheques de quartier";show();});
+			document.getElementById("cul").addEventListener("click", function(){logo.style.display="none";name_input.value="culture";show();});
 		</script>
 	</body>
 </html>
