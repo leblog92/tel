@@ -40,7 +40,7 @@
 			html,body{height:100%;margin:0;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;}
 			input[type="text"]{padding:10px;border-radius:10px;visibility:hidden;}
 			span.hist{font-size:14px;text-align:left;}
-			span.num{background-color:#333;color:white;border-radius:5%;padding:5px;font-size:20px;}
+			span.num{background-color:#333;color:white;border-radius:10px;padding:5px;padding-left:10px;padding-right:10px;font-size:20px;}
 			td{background:#ddd;line-height:1em;border-radius:10px;padding:10px;box-shadow:5px 5px 5px rgba(0,0,0,0.2);}
 			#elibre{position:fixed;bottom:0;right:0;text-align:center;font-size:12px;}
 			.wrapper {height:125%;width:100%;left:0;right:0;top:0;bottom:0;position:absolute;
@@ -70,6 +70,8 @@
 				50%{background-position:100% 19%}
 				100%{background-position:0% 82%}
 			}
+			span{transition: transform .2s;}
+			span:hover{transform: scale(1.5);}
 		</style>
 	</head>
 	<body>
