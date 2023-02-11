@@ -43,7 +43,7 @@
 			span.num{background-color:#333;color:white;border-radius:5%;padding:5px;font-size:20px;}
 			td{background:#ddd;line-height:1em;border-radius:10px;padding:10px;box-shadow:5px 5px 5px rgba(0,0,0,0.2);}
 			#elibre{position:fixed;bottom:0;right:0;text-align:center;font-size:12px;}
-			.wrapper {height:150%;width:100%;left:0;right:0;top:0;bottom:0;position:absolute;
+			.wrapper {height:125%;width:100%;left:0;right:0;top:0;bottom:0;position:absolute;
 				background:linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
 				background-size:1800% 1800%;background-attachment:fixed;
 				-webkit-animation: rainbow 18s ease infinite;
@@ -77,11 +77,12 @@
 		<div style="text-align:center;">
 			<div id="logo" onclick='location.reload();'><br><img src="phonesearch.png" id="gstitle" width="375px"/></div><br>
 			<div style="text-align:center">
-				<span id="jeu" style="color:#fff;background:blue;padding:10px;border-radius:10px;">JEUNESSE</span>
-				<span id="lit" style="color:#fff;background:black;padding:10px;border-radius:10px;">LITTERATURE</span>
-				<span id="mus" style="color:#fff;background:red;padding:10px;border-radius:10px;">MUSIQUE</span>
-				<span id="sci" style="color:#fff;background:green;padding:10px;border-radius:10px;">SCIENCES</span>
 				<span id="bib" style="color:#fff;background:lightseagreen;padding:10px;border-radius:10px;">ANNEXES</span>
+				<span id="cul" style="color:#fff;background:#f48fb1;padding:10px;border-radius:10px;">CULTURE</span>
+				<span id="jeu" style="color:#fff;background:royalblue;padding:10px;border-radius:10px;">JEUNESSE</span>
+				<span id="lit" style="color:#fff;background:#1c2833;padding:10px;border-radius:10px;">LITTERATURE</span>
+				<span id="mus" style="color:#fff;background:#f44336;padding:10px;border-radius:10px;">MUSIQUE</span>
+				<span id="sci" style="color:#fff;background:forestgreen;padding:10px;border-radius:10px;">SCIENCES</span>
 			</div><br>
 			<input autocapitalize="off" type="text" id="name_input"><br><br>
 		</div>
@@ -177,6 +178,9 @@
 			});
 			document.getElementById("bib").addEventListener("click", function(){
 				name_input.value="bibliotheques de quartier";show();
+			});
+			document.getElementById("cul").addEventListener("click", function(){
+				name_input.value="culture";show();
 			});
 		</script>
 	</body>
