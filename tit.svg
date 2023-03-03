@@ -6,6 +6,9 @@
 </mask>
 </defs>
 <rect width="800" height="600" fill="#f0f"/>
+<g>
+<image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="pages.png"/>
 
+</g>
 <rect width="800" height="600" fill="#fff" style="mask:url(#hide)"/>
 </svg>
