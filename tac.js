@@ -1,6 +1,6 @@
 var JWDraging;
 var pic=[
-"https://leblog92.github.io/tel/att.png",
+"'https://leblog92.github.io/tel/att.png'",
 "'https://leblog92.github.io/tel/ba1.png'",
 "'https://leblog92.github.io/tel/ba2.png'",
 "'https://leblog92.github.io/tel/bhl.png'",
