@@ -20,21 +20,18 @@ var pic=[
 "'https://leblog92.github.io/tel/val.png'",
 "'https://leblog92.github.io/tel/zem.png'"
 ];
-function init() { JWMoustache=document.createElement("div");
-JWMoustache.style.position="fixed";
-JWMoustache.style.zIndex=1000;
-document.getElementsByTagName("body")[0].appendChild(JWMoustache);
-JWMoustache.style.top=0+"px";
-JWMoustache.style.left=0+"px";
-JWMoustache.onmousedown=JWStartDrag;
-window.onmouseup=JWEndDrag;
-JWMoustache.innerHTML="<img src="+pic[Math.floor(Math.random()*pic.length)]+"/></div>";}
-function JWStartDrag(JWE) { JWDraging=JWE.currentTarget;
-JWDoDrag(JWE);
-window.onmousemove=JWDoDrag;
-JWE.preventDefault();}
+function init(){
+	JWMoustache=document.createElement("div");
+	JWMoustache.style.position="fixed";
+	JWMoustache.style.zIndex=1000;
+	document.getElementsByTagName("body")[0].appendChild(JWMoustache);
+	JWMoustache.style.top=0+"px";
+	JWMoustache.style.left=0+"px";
+	JWMoustache.onmousedown=JWStartDrag;
+	window.onmouseup=JWEndDrag;
+	JWMoustache.innerHTML="<img src="+pic[Math.floor(Math.random()*pic.length)]+"/></div>";
+}
+function JWStartDrag(JWE){JWDraging=JWE.currentTarget;JWDoDrag(JWE);window.onmousemove=JWDoDrag;JWE.preventDefault();}
 function JWEndDrag(JWE){window.onmousemove=null;}
-function JWDoDrag(JWE){JWDraging.style.top=(JWE.clientY-195)+"px";
-JWDraging.style.left=(JWE.clientX-115)+"px";
-JWE.preventDefault();}
+function JWDoDrag(JWE){JWDraging.style.top=(JWE.clientY-195)+"px";JWDraging.style.left=(JWE.clientX-115)+"px";JWE.preventDefault();}
 init();
