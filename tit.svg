@@ -6,6 +6,10 @@
 </mask>
 </defs>
 <rect width="800" height="600" fill="#f0f"/>
-
+<g>
+<image xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xlink:href="paper.png" x="0" y="0" width="1600"></image>
+<animateMotion begin="0s" dur="2s" repeatCount="indefinite" values="0,0;-800,0;0,-120"/>
+</g>
+<rect width="800" height="600" fill="#2498f3" opacity="0.5"/>
 <rect width="800" height="600" fill="#fff" style="mask:url(#hide)"/>
 </svg>
