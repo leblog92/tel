@@ -1,0 +1,183 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Annuaire téléphonique</title>
+<link rel="icon" type="image/png" href="tel.png" />
+</head>
+<body>
+
+<script>
+
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE HTML>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Video Game Search</title>
+		<link rel="icon" type="image/png" href="ICO.png"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+		<style>
+			#logo{color:white;}
+			#progress{color:white;position:fixed;left:0;bottom:24px;height:60px;font-family:Consolas;font-size:50px;border:1px solid red;background:linear-gradient(90deg,rgba(255,0,0,0.6),rgba(255,0,0,0.8));transition:1s;text-align:center;opacity:1;}
+			#gstitle{-webkit-animation:color-animation 4s infinite;animation:color-animation 4s infinite;}
+			@-webkit-keyframes color-animation{0%{-webkit-filter:hue-rotate(0deg);}50%{-webkit-filter:hue-rotate(360deg);}100%{-webkit-filter:hue-rotate(0deg);}}
+			@keyframes color-animation{0%{filter:hue-rotate(0deg);}50%{filter:hue-rotate(360deg);}100%{filter:hue-rotate(0deg);}}
+			.center{margin-left:auto;margin-right:auto;}
+			.fwb{font-weight:bold;}
+			.specs{line-height:1.5em;font-size:14px;}
+			a{color:black;text-decoration:none;}
+			body,input[type="text"]{font-size:20px;}
+			body::-webkit-scrollbar{display:none;}
+			body{font-family:'Open Sans',sans-serif;background:linear-gradient(#aaa,#eee) fixed;}
+			html,body{height:100%;margin:0;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;}
+			input[type="text"]{padding:10px;border-radius:10px;visibility:hidden;}
+			span.hist{font-size:14px;text-align:left;}
+			span.num{background-color:#333;color:white;border-radius:10px;padding:5px;padding-left:10px;padding-right:10px;font-size:20px;}
+			td{background:#ddd;line-height:1em;border-radius:10px;padding:10px;box-shadow:5px 5px 5px rgba(0,0,0,0.2);}
+			#elibre{position:fixed;bottom:0;right:0;text-align:center;font-size:12px;}
+			.wrapper {height:100%;width:100%;left:0;right:0;top:0;bottom:0;position:absolute;
+				background:linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+				background-size:1800% 1800%;background-attachment:fixed;
+				-webkit-animation: rainbow 18s ease infinite;
+				-z-animation: rainbow 18s ease infinite;
+				-o-animation: rainbow 18s ease infinite;
+				animation: rainbow 18s ease infinite;}
+			@-webkit-keyframes rainbow {
+				0%{background-position:0% 82%}
+				50%{background-position:100% 19%}
+				100%{background-position:0% 82%}
+			}
+			@-moz-keyframes rainbow {
+				0%{background-position:0% 82%}
+				50%{background-position:100% 19%}
+				100%{background-position:0% 82%}
+			}
+			@-o-keyframes rainbow {
+				0%{background-position:0% 82%}
+				50%{background-position:100% 19%}
+				100%{background-position:0% 82%}
+			}
+			@keyframes rainbow { 
+				0%{background-position:0% 82%}
+				50%{background-position:100% 19%}
+				100%{background-position:0% 82%}
+			}
+			span{transition: transform .2s;}
+			span:hover{transform: scale(1.5);}
+		</style>
+	</head>
+	<body>
+	<div class="wrapper">
+		<div style="text-align:center;">
+			<div id="logo" onclick='location.reload();'><br><img src="phonesearch.png" id="gstitle" width="375px"/></div><br>
+			<div style="text-align:center">
+				<span id="bib" style="color:#fff;background:lightseagreen;padding:10px;border-radius:10px;">ANNEXES</span>
+				<span id="cul" style="color:#fff;background:#f48fb1;padding:10px;border-radius:10px;">CULTURE</span>
+				<span id="jeu" style="color:#fff;background:royalblue;padding:10px;border-radius:10px;">JEUNESSE</span>
+				<span id="lit" style="color:#fff;background:#1c2833;padding:10px;border-radius:10px;">LITTERATURE</span>
+				<span id="mus" style="color:#fff;background:#f44336;padding:10px;border-radius:10px;">MUSIQUE</span>
+				<span id="sci" style="color:#fff;background:forestgreen;padding:10px;border-radius:10px;">SCIENCES</span>
+			</div><br>
+			<input autocapitalize="off" type="text" id="name_input"><br><br>
+		</div>
+		<table class="center" width="80%">
+			<tbody id="tab_results">
+			</tbody>
+		</table>
+	</div>
+		<script>
+			var logo=document.getElementById("logo");
+			var name_input=document.getElementById("name_input");
+			var data_input;
+			var tab_results=document.getElementById("tab_results");
+			var progress=document.getElementById("progress");
+			var resultNam=[];
+			var resultNum=[];
+			var str=name_input.value;
+			//Import start
+			
+			/*var arr1=["Help Desk Service","Les Mazurières Bibliothèque","Marcelina MIRANDA-DA-CRUZ","Marie PAUTRE","Mayrine EVRARD","Sonia NARDOUX","Anna GASCA","Béatrice BRANELLEC","Hélène LEDEMÉ","Nathalie FÉQUANT","Pascale OHANA","Patricia MAHRI","Sylvie PAZ","Anne FÖLLMI","Florence JOTERAT-JACQUIER","Laurence INCABY","Sandra DE OLIVEIRA","Sandrine COMBROM-FISCHER","Valérie CORDON","Ateliers Multimédia","Barbara CHARPENTIER","Matthieu KLEIN","Olivier GARSON","Salle Jeux Vidéo","Accueil Forum","Automates Forum","Cuisine Troisième étage","Libris Café","Magasin ","Maintenance ","Régie Auditorium","Salle de Réunion ","Scène Auditorium","Claudine DRIESNER","Martine LAURENT","Chantal DOOH-COLLINS","Didier GUISELIN","Marie-Nicole NICOLAS","Martine AUGUY","Nathalie HANNA-MORELLINI","Radouan ATIKI","Stéphane GODIN","Pôle Jeunesse","Catherine CONSTANT","Claire DUSART","Elisabeth DELMÉE","Marine LANNURIEN","Nadia BAUXDE","Sabine FRASZCZAK","Tamara SERPINSKY","Pôle Littérature & Langues","Adrien BRUNIN","Aurélie POULARD","Laurent BELLANGER","Laurina NICE","Loïc RIBON","Marie-Line MUSSET","Nicolas JODIN","Tiphayne TERRIER","Pôle Musique, Cinéma, Arts & Loisirs","Aurélie HAMMOUDI","Grégory BOURJOT","Joanne FAISSE","Marianne RUHM","Nathalie TUGÈNE","Pôle Sciences & Société","Anne-Valérie LALLEMAND","Chloé GRÈZE","Mathilde BOULERAND","Zacharie CARON","Espace Renoir Bibliothèque","Espace Renoir Ludothèque","Alice TAVERNY","Aurélie GODEFROY","Camille BARRÉ","Monique BOURDEIH","Atelier Grognard conseiller cult Rueil-Malmaison","Atelier Grognard Expo Rueil-Malmaison","Conservatoire Accueil Rueil-Malmaison","Conservatoire Secrétariat Rueil-Malmaison","École d'Arts Rueil-Malmaison"];
+			var arr2=["Extérieur","Mazurières","Mazurières","Mazurières","Mazurières","Mazurières","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Renoir","Renoir","Renoir","Renoir","Renoir","Renoir","Rueil-Malmaison","Rueil-Malmaison","Rueil-Malmaison","Rueil-Malmaison","Rueil-Malmaison"];
+			var arr3=["Autres","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Administration","Administration","Administration","Administration","Administration","Administration","Administration","Affaires Culturelles","Affaires Culturelles","Affaires Culturelles","Affaires Culturelles","Affaires Culturelles","Affaires Culturelles","Atelier Multimédia","Atelier Multimédia","Atelier Multimédia","Atelier Multimédia","Atelier Multimédia","Autres","Autres","Autres","Autres","Autres","Autres","Autres","Autres","Autres","Équipement","Équipement","Forum","Forum","Forum","Forum","Forum","Forum","Forum","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Sciences & Société","Pôle Sciences & Société","Pôle Sciences & Société","Pôle Sciences & Société","Pôle Sciences & Société","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Autres","Autres","Autres","Autres","Autres"];
+			var arr4=["22 22","01 47 49 78 50","82 71","82 71","82 71","82 71","53 34","60 62","53 32","53 36","53 29","53 31","53 23","65 48","53 17","53 24","53 04","65 67","53 68","63 68","11 41","63 05","11 41","63 68","01 47 14 54 54","66 15","63 78","57 61","63 81","63 53","63 80","63 79","63 83","53 26","82 71","66 15","63 53","64 54","62 54","63 76","63 53","63 53","63 61","63 66","63 66","63 55","63 66","63 55","63 66","53 38","63 58","63 59","53 28","63 60","63 59","63 60","53 28","63 73","63 87","63 70","63 73","53 27","53 27","63 71","63 73","63 74","63 75","63 72","53 26","53 35","01 47 49 36 68","01 47 49 34 56","01 47 49 36 68","01 47 49 34 56","01 47 49 36 68","01 47 49 36 68","01 41 39 09 68","01 47 14 11 63","01 47 49 74 45","01 47 49 09 50","01 55 47 14 80"];
+			var arr5=["help desk service exterieur autres","les mazurieres bibliotheque mazurieres bibliotheques de quartier","marcelina miranda-da-cruz mazurieres bibliotheques de quartier","marie pautre mazurieres bibliotheques de quartier","mayrine evrard mazurieres bibliotheques de quartier","sonia nardoux mazurieres bibliotheques de quartier","anna gasca mediatheque administration","beatrice branellec mediatheque administration","helene ledeme mediatheque administration","nathalie fequant mediatheque administration","pascale ohana mediatheque administration","patricia mahri mediatheque administration","sylvie paz mediatheque administration","anne follmi mediatheque affaires culturelles","florence joterat-jacquier mediatheque affaires culturelles","laurence incaby mediatheque affaires culturelles","sandra de oliveira mediatheque affaires culturelles","sandrine combrom-fischer mediatheque affaires culturelles","valerie cordon mediatheque affaires culturelles","ateliers multimedia mediatheque atelier multimedia","barbara charpentier mediatheque atelier multimedia","matthieu klein mediatheque atelier multimedia","olivier garson mediatheque atelier multimedia","salle jeux video mediatheque atelier multimedia","accueil forum mediatheque autres","automates forum mediatheque autres","cuisine troisieme etage mediatheque autres","libris cafe mediatheque autres","magasin  mediatheque autres","maintenance  mediatheque autres","regie auditorium mediatheque autres","salle de reunion  mediatheque autres","scene auditorium mediatheque autres","claudine driesner mediatheque equipement","martine laurent mediatheque equipement","chantal dooh-collins mediatheque forum","didier guiselin mediatheque forum","marie-nicole nicolas mediatheque forum","martine auguy mediatheque forum","nathalie hanna-morellini mediatheque forum","radouan atiki mediatheque forum","stephane godin mediatheque forum","pole jeunesse mediatheque pole jeunesse","catherine constant mediatheque pole jeunesse","claire dusart mediatheque pole jeunesse","elisabeth delmee mediatheque pole jeunesse","marine lannurien mediatheque pole jeunesse","nadia bauxde mediatheque pole jeunesse","sabine fraszczak mediatheque pole jeunesse","tamara serpinsky mediatheque pole jeunesse","pole litterature & langues mediatheque pole litterature & langues","adrien brunin mediatheque pole litterature & langues","aurelie poulard mediatheque pole litterature & langues","laurent bellanger mediatheque pole litterature & langues","laurina nice mediatheque pole litterature & langues","loic ribon mediatheque pole litterature & langues","marie-line musset mediatheque pole litterature & langues","nicolas jodin mediatheque pole litterature & langues","tiphayne terrier mediatheque pole litterature & langues","pole musique, cinema, arts & loisirs mediatheque pole musique, cinema, arts & loisirs","aurelie hammoudi mediatheque pole musique, cinema, arts & loisirs","gregory bourjot mediatheque pole musique, cinema, arts & loisirs","joanne faisse mediatheque pole musique, cinema, arts & loisirs","marianne ruhm mediatheque pole musique, cinema, arts & loisirs","nathalie tugene mediatheque pole musique, cinema, arts & loisirs","pole sciences & societe mediatheque pole sciences & societe","anne-valerie lallemand mediatheque pole sciences & societe","chloe greze mediatheque pole sciences & societe","mathilde boulerand mediatheque pole sciences & societe","zacharie caron mediatheque pole sciences & societe","espace renoir bibliotheque renoir bibliotheques de quartier","espace renoir ludotheque renoir bibliotheques de quartier","alice taverny renoir bibliotheques de quartier","aurelie godefroy renoir bibliotheques de quartier","camille barre renoir bibliotheques de quartier","monique bourdeih renoir bibliotheques de quartier","atelier grognard conseiller cult rueil-malmaison rueil-malmaison autres","atelier grognard expo rueil-malmaison rueil-malmaison autres","conservatoire accueil rueil-malmaison rueil-malmaison autres","conservatoire secretariat rueil-malmaison rueil-malmaison autres","ecole d'arts rueil-malmaison rueil-malmaison autres"];*/
+
+var arr1=["Help Desk Service","🏛️ Les Mazurières Bibliothèque","Marcelina MIRANDA-DA-CRUZ","Marie PAUTRE","Mayrine EVRARD","Sonia NARDOUX","Anna GASCA","Béatrice BRANELLEC","Hélène LEDEMÉ","Nathalie FÉQUANT","Pascale OHANA","Patricia MAHRI","Sylvie PAZ","Anne FÖLLMI","Christine COMBROM-FISCHER","Florence JOTERAT-JACQUIER","Laurence INCABY","Sandra DE OLIVEIRA","Valérie CORDON","Ateliers Multimédia","Barbara CHARPENTIER","Matthieu KLEIN","Olivier GARSON","Salle Jeux Vidéo","Accueil Forum","Automates Forum","Cuisine Troisième étage","Libris Café","Magasin ","Maintenance ","Régie Auditorium","Salle de Réunion ","Scène Auditorium","Nathalie TUGÈNE","Claudine DRIESNER","Martine LAURENT","Chantal DOOH-COLLINS","Didier GUISELIN","Marie-Nicole NICOLAS","Martine AUGUY","Nathalie HANNA-MORELLINI","Radouan ATIKI","Stéphane GODIN","Pôle Jeunesse","Catherine CONSTANT","Claire DUSART","Elisabeth DELMÉE","Marine LANNURIEN","Nadia BAUXDE","Sabine FRASZCZAK","Tamara SERPINSKY","Pôle Littérature & Langues","Adrien BRUNIN","Aurélie POULARD","Laurent BELLANGER","Laurina NICE","Loïc RIBON","Marie-Line MUSSET","Tiphayne TERRIER","Pôle Musique, Cinéma, Arts & Loisirs","Aurélie HAMMOUDI","Grégory BOURJOT","Joanne FAISSE","Marianne RUHM","Nicolas JODIN","Pôle Sciences & Société","Anne-Valérie LALLEMAND","Chloé GRÈZE","Mathilde BOULERAND","Zacharie CARON","🏛️ Espace Renoir Bibliothèque","🏛️ Espace Renoir Ludothèque","Alice TAVERNY","Aurélie GODEFROY","Camille BARRÉ","Monique BOURDEIH","🏛️ Atelier Grognard conseiller cult. Rueil-Malmaison","🏛️ Atelier Grognard Expo Rueil-Malmaison","🏛️ Conservatoire Accueil Rueil-Malmaison","🏛️ Conservatoire Secrétariat Rueil-Malmaison","🏛️ École d'Arts Rueil-Malmaison"];
+var arr2=["Extérieur","Mazurières","Mazurières","Mazurières","Mazurières","Mazurières","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Médiathèque","Renoir","Renoir","Renoir","Renoir","Renoir","Renoir","Rueil-Malmaison","Rueil-Malmaison","Rueil-Malmaison","Rueil-Malmaison","Rueil-Malmaison"];
+var arr3=["Autres","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Administration","Administration","Administration","Administration","Administration","Administration","Administration","Affaires Culturelles","Affaires Culturelles","Affaires Culturelles","Affaires Culturelles","Affaires Culturelles","Affaires Culturelles","Atelier Multimédia","Atelier Multimédia","Atelier Multimédia","Atelier Multimédia","Atelier Multimédia","Autres","Autres","Autres","Autres","Autres","Autres","Autres","Autres","Autres","Bibliothèques de Quartier","Équipement","Équipement","Forum","Forum","Forum","Forum","Forum","Forum","Forum","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Jeunesse","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Littérature & Langues","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Musique, Cinéma, Arts & Loisirs","Pôle Sciences & Société","Pôle Sciences & Société","Pôle Sciences & Société","Pôle Sciences & Société","Pôle Sciences & Société","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Bibliothèques de Quartier","Autres","Autres","Autres","Autres","Autres"];
+var arr4=["22 22","01 47 49 78 50","82 71","82 71","82 71","82 71","53 34","60 62","53 32","53 36","53 29","53 31","53 23","65 48","65 67","53 17","53 24","53 04","53 68","63 68","11 41","63 05","11 41","63 68","01 47 14 54 54","66 15","63 78","57 61","63 81","63 53","63 80","63 79","63 83","63 73","53 26","82 71","66 15","63 53","64 54","62 54","63 76","63 53","63 53","63 61","63 66","63 66","63 55","63 66","63 55","63 66","53 38","63 58","63 59","53 28","63 60","63 59","63 60","53 28","63 87","63 70","63 73","53 27","53 27","63 71","63 73","63 74","63 75","63 72","53 26","53 35","01 47 49 36 68","01 47 49 34 56","01 47 49 36 68","01 47 49 34 56","01 47 49 36 68","01 47 49 36 68","01 41 39 09 68","01 47 14 11 63","01 47 49 74 45","01 47 49 09 50","01 55 47 14 80"];
+var arr5=["help desk service exterieur autres","🏛️ les mazurieres bibliotheque mazurieres bibliotheques de quartier","marcelina miranda-da-cruz mazurieres bibliotheques de quartier","marie pautre mazurieres bibliotheques de quartier","mayrine evrard mazurieres bibliotheques de quartier","sonia nardoux mazurieres bibliotheques de quartier","anna gasca mediatheque administration","beatrice branellec mediatheque administration","helene ledeme mediatheque administration","nathalie fequant mediatheque administration","pascale ohana mediatheque administration","patricia mahri mediatheque administration","sylvie paz mediatheque administration","anne follmi mediatheque affaires culturelles","christine combrom-fischer mediatheque affaires culturelles","florence joterat-jacquier mediatheque affaires culturelles","laurence incaby mediatheque affaires culturelles","sandra de oliveira mediatheque affaires culturelles","valerie cordon mediatheque affaires culturelles","ateliers multimedia mediatheque atelier multimedia","barbara charpentier mediatheque atelier multimedia","matthieu klein mediatheque atelier multimedia","olivier garson mediatheque atelier multimedia","salle jeux video mediatheque atelier multimedia","accueil forum mediatheque autres","automates forum mediatheque autres","cuisine troisieme etage mediatheque autres","libris cafe mediatheque autres","magasin  mediatheque autres","maintenance  mediatheque autres","regie auditorium mediatheque autres","salle de reunion  mediatheque autres","scene auditorium mediatheque autres","nathalie tugene mediatheque bibliotheques de quartier","claudine driesner mediatheque equipement","martine laurent mediatheque equipement","chantal dooh-collins mediatheque forum","didier guiselin mediatheque forum","marie-nicole nicolas mediatheque forum","martine auguy mediatheque forum","nathalie hanna-morellini mediatheque forum","radouan atiki mediatheque forum","stephane godin mediatheque forum","pole jeunesse mediatheque pole jeunesse","catherine constant mediatheque pole jeunesse","claire dusart mediatheque pole jeunesse","elisabeth delmee mediatheque pole jeunesse","marine lannurien mediatheque pole jeunesse","nadia bauxde mediatheque pole jeunesse","sabine fraszczak mediatheque pole jeunesse","tamara serpinsky mediatheque pole jeunesse","pole litterature & langues mediatheque pole litterature & langues","adrien brunin mediatheque pole litterature & langues","aurelie poulard mediatheque pole litterature & langues","laurent bellanger mediatheque pole litterature & langues","laurina nice mediatheque pole litterature & langues","loic ribon mediatheque pole litterature & langues","marie-line musset mediatheque pole litterature & langues","tiphayne terrier mediatheque pole litterature & langues","pole musique, cinema, arts & loisirs mediatheque pole musique, cinema, arts & loisirs","aurelie hammoudi mediatheque pole musique, cinema, arts & loisirs","gregory bourjot mediatheque pole musique, cinema, arts & loisirs","joanne faisse mediatheque pole musique, cinema, arts & loisirs","marianne ruhm mediatheque pole musique, cinema, arts & loisirs","nicolas jodin mediatheque pole musique, cinema, arts & loisirs","pole sciences & societe mediatheque pole sciences & societe","anne-valerie lallemand mediatheque pole sciences & societe","chloe greze mediatheque pole sciences & societe","mathilde boulerand mediatheque pole sciences & societe","zacharie caron mediatheque pole sciences & societe","🏛️ espace renoir bibliotheque renoir bibliotheques de quartier","🏛️ espace renoir ludotheque renoir bibliotheques de quartier","alice taverny renoir bibliotheques de quartier","aurelie godefroy renoir bibliotheques de quartier","camille barre renoir bibliotheques de quartier","monique bourdeih renoir bibliotheques de quartier","🏛️ atelier grognard conseiller cult. rueil-malmaison rueil-malmaison autres","🏛️ atelier grognard expo rueil-malmaison rueil-malmaison autres","🏛️ conservatoire accueil rueil-malmaison rueil-malmaison autres","🏛️ conservatoire secretariat rueil-malmaison rueil-malmaison autres","🏛️ ecole d'arts rueil-malmaison rueil-malmaison autres"];
+			
+			//Import end
+			var input=document.querySelector('#name_input');
+
+			function show() {
+				tab_results.innerHTML="";
+				name_input.value=name_input.value.toLowerCase();
+				name_input.value=name_input.value.replace("é","e");
+				name_input.value=name_input.value.replace("è","e");
+				name_input.value=name_input.value.replace("ê","e");
+				name_input.value=name_input.value.replace("ë","e");
+				name_input.value=name_input.value.replace("î","i");
+				name_input.value=name_input.value.replace("ï","i");
+				name_input.value=name_input.value.replace("ô","o");
+				name_input.value=name_input.value.replace("ö","o");
+				name_input.value=name_input.value.replace("œ","oe");
+				name_input.value=name_input.value.replace("ù","u");
+				name_input.value=name_input.value.replace("ü","u");
+				str=name_input.value;
+				if (str.length > 1) {
+					for (var i=0;i < arr1.length;i++) {
+						if (arr5[i].indexOf(str) !=-1) {
+							resultNam.push(arr1[i]);
+							resultNum.push(arr4[i]);
+						}
+					}
+					if (resultNam.length==0) {
+						tab_results.innerHTML="<tr><td style='text-align:center;'>Aucun résultat ...<br><br><img src='Harold.png' height='300px' width='auto' style='border-radius:10px;'/></td></tr>";
+					} else if (resultNam.length > 1) {
+						tab_results.innerHTML="<tr><td colspan='3' style='text-align:center;font-weight:bold;color:#000'>"+resultNam.length+" résultats</td></tr>";
+					}
+					for (var k=0;k < resultNam.length;k++) {
+						tab_results.innerHTML +="<tr id='tr"+k+"'><td colspan='3' style='text-align:center;font-weight:bold;'>"+resultNam[k]+" <span class='num'>"+resultNum[k];+"</span></td></tr>";
+					}
+					tab_results.innerHTML +="<tr onclick='location.reload();'><td style='text-align:center;background:#000;border:2px solid #ddd;color:#fff;' colspan='3'><marquee direction='right'>restart ?</marquee></td></tr>";
+					resultNam=[];
+					resultNum=[];
+				}
+			}
+			name_input.onclick=function out() {
+				logo.style.display="none";
+				name_input.value="";
+				tab_results.innerHTML="<tr><td style='text-align:center;'><marquee scrollamount='12'>📞 Recherche parmi "+arr1.length+" numéros de téléphone</marquee></td></tr>";
+			};
+			var count=0;
+
+			function disp_click(clicked_id) {
+				if(document.getElementById(clicked_id+"z").style.display=="table-row"){
+					document.getElementById(clicked_id+"z").style.display="none";
+				} else{
+					document.getElementById(clicked_id+"z").style.display="table-row";
+				}
+			}
+
+			input.style.visibility="visible";
+			input.addEventListener("keyup",show);
+			
+			document.getElementById("sci").addEventListener("click", function(){logo.style.display="none";name_input.value="sciences";show();});
+			document.getElementById("lit").addEventListener("click", function(){logo.style.display="none";name_input.value="litterature";show();});
+			document.getElementById("jeu").addEventListener("click", function(){logo.style.display="none";name_input.value="jeunesse";show();});
+			document.getElementById("mus").addEventListener("click", function(){logo.style.display="none";name_input.value="musique";show();});
+			document.getElementById("bib").addEventListener("click", function(){logo.style.display="none";name_input.value="bibliotheques de quartier";show();});
+			document.getElementById("cul").addEventListener("click", function(){logo.style.display="none";name_input.value="culture";show();});
+		</script>
+	</body>
+</html>
