@@ -89,12 +89,12 @@
 	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 	<script src="https://leblog92.github.io/tel/oneko.js"></script>
 	<script type="text/javascript">
-	  const btn = document.querySelector('#btn');
-	  const canvas = document.querySelector('#confetti-canvas');
+	  const btn=document.querySelector('#btn');
+	  const canvas=document.querySelector('#confetti-canvas');
 	  function onButtonClick(){
-		var myConfetti = confetti.create(canvas, {
-		  resize: true,
-		  useWorker: true
+		var myConfetti=confetti.create(canvas,{
+		  resize:true,
+		  useWorker:true
 		});
 		myConfetti({
 		  particleCount: 100,

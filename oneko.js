@@ -56,20 +56,20 @@
         ],
     };
     function create() {
-        nekoEl.id = "oneko";
-        nekoEl.style.width = "32px";
-        nekoEl.style.height = "32px";
-        nekoEl.style.position = "fixed";
-        nekoEl.style.backgroundImage = "url('https://leblog92.github.io/tel/oneko.gif')";
-        nekoEl.style.imageRendering = "pixelated";
-        nekoEl.style.left = "16px";
-        nekoEl.style.top = "16px";
+		nekoEl.id="oneko";
+		nekoEl.style.width="32px";
+		nekoEl.style.height="32px";
+		nekoEl.style.position="fixed";
+		nekoEl.style.backgroundImage="url('https://leblog92.github.io/tel/oneko.png')";
+		nekoEl.style.imageRendering="pixelated";
+		nekoEl.style.left="16px";
+		nekoEl.style.top="16px";
 
         document.body.appendChild(nekoEl);
 
-        document.onmousemove = (event) => {
-            mousePosX = event.clientX;
-            mousePosY = event.clientY;
+        document.onmousemove=(event) => {
+            mousePosX=event.clientX;
+            mousePosY=event.clientY;
         };
 
         window.onekoInterval = setInterval(frame, 100);
