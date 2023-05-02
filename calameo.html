@@ -14,8 +14,9 @@
 		width:200px;
 		position:fixed;
 		top:8px;
-		right:8px;
-		display:none;
+		right:-200px;
+		/*display:none;*/
+		transition:1s;
 	}
 	a{
 		color:white;
@@ -38,11 +39,17 @@
 		right:0;
 		background:linear-gradient(217deg,rgba(255,0,0,.8),rgba(255,0,0,0) 70.71%),linear-gradient(127deg,rgba(0,255,0,.8),rgba(0,255,0,0) 70.71%),linear-gradient(336deg,rgba(0,0,255,.8),rgba(0,0,255,0) 70.71%);
 	}
-	#div3:hover ~ #div0{
-		display:block;
+	#div3:hover ~ #div0,#div0:hover{
+		right:8px;
 	}
-	#div0:hover{
-		display:block;
+	#div3:hover ~ #div5,#div5:hover{
+		bottom:-24px;
+	}
+	#div5{
+		position:fixed;
+		bottom:-400px;
+		transition:1s;
+		right:0;
 	}
 	button{
 		margin-top:4px;
@@ -61,15 +68,13 @@
 	<span style="font-weight:bold">Générateur de code d'insertion</span><br>
 	pour la liseuse Calaméo v6<br><br>
 	<div id="div0" style="text-align:right">
-		<a href="https://www.calameo.com/account/book" target="blank">Calaméo</a><br>
-		<a href="https://www.mediatheque-rueilmalmaison.fr/ecrire" target="blank">Médiathèque</a><br>
-		<a href="https://catalogue.mediatheque-rueilmalmaison.fr/account" target="blank">Catalogue</a><br>
-		<a style="cursor:pointer;" onclick="demo()">Démo</a>
+		<a href="https://www.calameo.com/account/book" target="blank">Calaméo •</a><br><br>
+		<a href="https://www.mediatheque-rueilmalmaison.fr/ecrire" target="blank">Médiathèque •</a><br><br>
+		<a href="https://catalogue.mediatheque-rueilmalmaison.fr/account" target="blank">Catalogue •</a><br><br>
+		<a style="cursor:pointer;" onclick="demo()">Démo •</a>
 		<div id="div4"></div>
-		<div id="div5" style="position:fixed;bottom:-24px;right:0;">
-			<img src="https://leblog92.github.io/JVO/cat.png"/>
-		</div>
 	</div>
+	<div id="div5"><img src="https://leblog92.github.io/JVO/cat.png"/></div>
 	<form name="myForm">
 		<label>Titre Calaméo</label><br>
 		<input type="text" id="f1"><br><br>
@@ -109,7 +114,6 @@
 	  pointer-events: none;
 	}
 	</style>
-	
 	
 	<script>
 		function gencal(){
