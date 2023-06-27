@@ -119,6 +119,7 @@
 		function gencal(){
 		var f1=document.getElementById("f1").value;
 		var f2=document.getElementById("f2").value;
+		var btn=document.getElementById("btn");
 		var num=f2.replace("https://www.calameo.com/read/","");
 		var div1=document.getElementById("div1");
 		if(f1==""||f2==""){alert("Les champs sont vides ! Vous me décevez ... 😞");}
@@ -138,7 +139,7 @@
 			var div0=document.getElementById("div4");
 			document.getElementById("f1").value="Le monde d'après";
 			document.getElementById("f2").value="https://www.calameo.com/read/0001381585e2a76b5ec07";
-			div4.innerHTML='<br><img src="https://www.mediatheque-rueilmalmaison.fr/IMG/png/pole-10.png"/><br>pole-198x92px<br><br><img src="https://www.mediatheque-rueilmalmaison.fr/IMG/png/article-18.png"/><br>article-100x144px';
+			btn.click();
 		}
 	</script>
 </body>
