@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<style>
+.pays{
+font-family:sans-serif;
+background:green;
+padding:10px;
+line-height:2.5em;
+border-radius:5px;
+}
+</style>
+</head>
+<body>
+<div id="div1">résultats</div>
+<script>
+	function aff_eur(){
+		var div1=document.getElementById("div1");
+		var europe=["Ecosse","Irlande","Angleterre","Pays-de-Galles","Allemagne","Slovaquie","Liechtenstein","Autriche","République Tchèque","Pologne","Hongrie","Italie","Sardaigne","Sicile","Malte","Espagne","Canaries","Baléares","Portugal","Madère","Açores","Russie","Azerbaïdjan","Arménie","Géorgie","Moldavie","Ukraine","Biélorussie","Estonie","Lettonie","Lituanie","Norvège","Suède","Finlande","Danemark","Islande","Pays-Bas","Belgique","Luxembourg","Suisse","Grèce","Crète","Albanie","Serbie","Croatie","Slovénie","Bosnie-Herzégovine","Monténégro","Macédoine","Kosovo","Roumanie","Bulgarie"];
+		div1.innerHTML="";
+		for(var i=0;i<europe.length;i++){
+			div1.innerHTML+="<span class='pays'>"+europe[i]+"</span> ";
+		}
+	}
+	aff_eur();
+</script>
+</body>
+</html>
