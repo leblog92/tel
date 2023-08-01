@@ -12,8 +12,14 @@ transition:0.5s;
 }
 
 .pays:hover{
-background:#006000;
+background:#00ff00;
 }
+
+a{color:white;}
+a:link{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+a:active{text-decoration:none;}
 </style>
 </head>
 <body>
@@ -21,10 +27,11 @@ background:#006000;
 <script>
 	function aff_eur(){
 		var div1=document.getElementById("div1");
-		var europe=["Ecosse","Irlande","Angleterre","Pays-de-Galles","Allemagne","Slovaquie","Liechtenstein","Autriche","République Tchèque","Pologne","Hongrie","Italie","Sardaigne","Sicile","Malte","Espagne","Canaries","Baléares","Portugal","Madère","Açores","Russie","Azerbaïdjan","Arménie","Géorgie","Moldavie","Ukraine","Biélorussie","Estonie","Lettonie","Lituanie","Norvège","Suède","Finlande","Danemark","Islande","Pays-Bas","Belgique","Luxembourg","Suisse","Grèce","Crète","Albanie","Serbie","Croatie","Slovénie","Bosnie-Herzégovine","Monténégro","Macédoine","Kosovo","Roumanie","Bulgarie"];
+		var europe=["Açores","Albanie","Allemagne","Angleterre","Arménie","Autriche","Baléares","Belgique","Biélorussie","Bosnie-Herzégovine","Bulgarie","Canaries","Crète","Croatie","Danemark","Ecosse","Espagne","Estonie","Finlande","Géorgie","Grèce","Hongrie","Irlande","Islande","Italie","Kosovo","Lettonie","Liechtenstein","Lituanie","Luxembourg","Macédoine","Madère","Malte","Moldavie","Monténégro","Norvège","Pays-Bas","Pays-de-Galles","Pologne","Portugal","République Tchèque","Roumanie","Russie","Sardaigne","Serbie","Sicile","Slovaquie","Slovénie","Suède","Suisse","Ukraine"];
+		var eur_link=["",]
 		div1.innerHTML="";
 		for(var i=0;i<europe.length;i++){
-			div1.innerHTML+="<span class='pays'>"+europe[i]+"</span> ";
+			div1.innerHTML+="<a href='"+eur_link[i]+"' target='_blank'><span class='pays'>"+europe[i]+"</span></a> ";
 		}
 	}
 	aff_eur();
