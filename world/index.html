@@ -41,6 +41,8 @@ a:visited{text-decoration:none;}
 a:hover{text-decoration:none;}
 a:active{text-decoration:none;}
 </style>
+<script src="jquery-3.6.4.min.js"></script>
+
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="world" width="100%" height="560px" version="1.1" viewBox="0 0 742 370">
@@ -109,7 +111,7 @@ a:active{text-decoration:none;}
 	var div1=document.getElementById("div1");
 
 	function aff_eur(){
-		var europe=["Açores","Albanie","Allemagne","Angleterre","Arménie","Autriche","Baléares","Belgique","Biélorussie","Bosnie-Herzégovine","Bulgarie","Canaries","Crète","Croatie","Danemark","Ecosse","Espagne","Estonie","Finlande","Géorgie","Grèce","Hongrie","Irlande","Islande","Italie","Kosovo","Lettonie","Liechtenstein","Lituanie","Luxembourg","Macédoine","Madère","Malte","Moldavie","Monténégro","Norvège","Pays-Bas","Pays-de-Galles","Pologne","Portugal","République Tchèque","Roumanie","Russie","Sardaigne","Serbie","Sicile","Slovaquie","Slovénie","Suède","Suisse","Ukraine"];
+		var europe=["Açores","Albanie","Allemagne","Angleterre","Arménie","Autriche","Baléares","Belgique","Biélorussie","Bosnie-Herzégovine","Bulgarie","Canaries","Crète","Croatie","Danemark","Ecosse","Espagne","Estonie","Finlande","Géorgie","Grèce","Hongrie","Irlande","Islande","Italie","Kosovo","Lettonie","Liechtenstein","Lituanie","Luxembourg","Macédoine","Madère","Malte","Moldavie","Monténégro","Norvège","Pays-Bas","Pays-de-Galles","Pologne","Portugal","République&nbsp;Tchèque","Roumanie","Russie","Sardaigne","Serbie","Sicile","Slovaquie","Slovénie","Suède","Suisse","Ukraine"];
 		var eur_link=[];
 		div1.innerHTML="";
 		for(var i=0;i<europe.length;i++){
