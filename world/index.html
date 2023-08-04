@@ -110,54 +110,54 @@ a:active{text-decoration:none;}
 
 	function aff_eur(){
 		var europe=["Açores","Albanie","Allemagne","Angleterre","Arménie","Autriche","Baléares","Belgique","Biélorussie","Bosnie-Herzégovine","Bulgarie","Canaries","Crète","Croatie","Danemark","Ecosse","Espagne","Estonie","Finlande","Géorgie","Grèce","Hongrie","Irlande","Islande","Italie","Kosovo","Lettonie","Liechtenstein","Lituanie","Luxembourg","Macédoine","Madère","Malte","Moldavie","Monténégro","Norvège","Pays-Bas","Pays-de-Galles","Pologne","Portugal","République Tchèque","Roumanie","Russie","Sardaigne","Serbie","Sicile","Slovaquie","Slovénie","Suède","Suisse","Ukraine"];
-		var eur_link=[];
+		var eur_link=["acores","albanie","allemagne","angleterre","armenie","autriche","baleares","belgique","bielorussie","bosnie-herzegovine","bulgarie","canaries","crete","croatie","danemark","ecosse","espagne","estonie","finlande","georgie","grece","hongrie","irlande","islande","italie","kosovo","lettonie","liechtenstein","lituanie","luxembourg","macedoine","madere","malte","moldavie","montenegro","norvege","pays-bas","pays-de-galles","pologne","portugal","republique-tcheque","roumanie","russie","sardaigne","serbie","sicile","slovaquie","slovenie","suede","suisse","ukraine"];
 		div1.innerHTML="";
 		for(var i=0;i<europe.length;i++){
-			div1.innerHTML+="<a href='https://fr.wikipedia.org/wiki/"+europe[i]+"' target='_blank'><span class='pays'>"+europe[i]+"</span></a> ";
+			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-afrique-du-sud/voyager-"+eur_link[i]+"' target='_blank'><span class='pays'>"+europe[i]+"</span></a> ";
 		}
 	}
 	function aff_adn(){
 		var ameriquedunord=["Belize","Canada","Costa Rica","Cuba","États-Unis","Guatemala","Haïti","Honduras","Mexique","Nicaragua","Panama","Porto Rico","République Dominicaine","Salvador"];
-		var adn_link=[];
+		var adn_link=["belize","canada","costa-rica","cuba","etats-unis","guatemala","haiti","honduras","mexique","nicaragua","panama","porto-rico","republique-dominicaine","salvador"];
 		div1.innerHTML="";
 		for(var i=0;i<ameriquedunord.length;i++){
-			div1.innerHTML+="<a href='https://fr.wikipedia.org/wiki/"+ameriquedunord[i]+"' target='_blank'><span class='pays'>"+ameriquedunord[i]+"</span></a> ";
+			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-afrique-du-sud/voyager-"+adn_link[i]+"' target='_blank'><span class='pays'>"+ameriquedunord[i]+"</span></a> ";
 		}
 	}
 	
 	function aff_amo(){
-		var asie=["Chine","Hong-Kong","Mongolie","Népal","Taipei","Taiwan","Corée Nord","Corée Sud","Japon","Dubaï","Oman","Yémen","Inde","Rajasthan","Sri&nbsp;Lanka","Bhoutan","pakistan","Bagladesh","Iran","Azerbaïdjan","Turquie","Syrie","Liban","Chypre","Israël","Cisjordanie","Palestine","Jordanie","Afghanistan","Kirghizistan","Kazakhstan","Ouzbékistan","Birmanie","Thaïlande","Malaisie","Brunei","Singapour","Cambodge","Laos","Vietnam","Indonésie","Philippines"];
-		var amo_link=[];
+		var asie=["Afghanistan","Arabie&nbsp;saoudite","Arménie","Azerbaïdjan","Bagladesh","Bhoutan","Birmanie","Brunei","Cambodge","Chine","Chypre","Cisjordanie","Corée&nbsp;Nord","Corée&nbsp;Sud","Émitas&nbsp;arabes&nbsp;unis","Dubaï","Hong-Kong","Inde","Indonésie","Iran","Israël","Japon","Jordanie","Kazakhstan","Kirghizistan","Laos","Liban","Malaisie","Mongolie","Népal","Oman","Ouzbékistan","Pakistan","Palestine","Philippines","Rajasthan","Singapour","Sri&nbsp;Lanka","Syrie","Taipei","Taiwan","Thaïlande","Turquie","Vietnam","Yémen"];
+		var amo_link=["afghanistan","arabie-saoudite","armenie","azerbaedjan","bagladesh","bhoutan","birmanie","brunei","cambodge","chine","chypre","cisjordanie","coree-nord","coree-sud","emitas-arabes-unis","dubae","hong-kong","inde","indonesie","iran","israel","japon","jordanie","kazakhstan","kirghizistan","laos","liban","malaisie","mongolie","nepal","oman","ouzbekistan","pakistan","palestine","philippines","rajasthan","singapour","sri-lanka","syrie","taipei","taiwan","thailande","turquie","vietnam","yemen"];
 		div1.innerHTML="";
 		for(var i=0;i<asie.length;i++){
-			div1.innerHTML+="<a href='https://fr.wikipedia.org/wiki/"+asie[i]+"' target='_blank'><span class='pays'>"+asie[i]+"</span></a> ";
+			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-afrique-du-sud/voyager-"+amo_link[i]+"' target='_blank'><span class='pays'>"+asie[i]+"</span></a> ";
 		}
 	}
 
 	function aff_afr(){
-		var afrique=["Afrique du Sud","Algérie","Angola","Bénin","Burkina Faso","Burundi","Cameroun","Cap-Vert","Congo","Côte d'Ivoire","Egypte","Ethiopie","Gabon","Gmabie","Guinée","Guinée Bissau","Kenya","Madagascar","Maldives","Mali","Maros","Maurices","Mozambique","Namibie","Niger","Ouganda","RDC","Rwanda","Sénégal","Seychelles","Somalie","Tanzanie","Tchad","Togo","Tunisie"];
-		var afr_link=[];
+		var afrique=["Afrique&nbsp;du&nbsp;Sud","Algérie","Angola","Bénin","Burkina&nbsp;Faso","Burundi","Cameroun","Cap-Vert","Congo","Côte&nbsp;d'Ivoire","Egypte","Ethiopie","Gabon","Gmabie","Guinée","Guinée&nbsp;Bissau","Kenya","Madagascar","Maldives","Mali","Maros","Maurices","Mozambique","Namibie","Niger","Ouganda","RDC","Rwanda","Sénégal","Seychelles","Somalie","Tanzanie","Tchad","Togo","Tunisie"];
+		var afr_link=["afrique-du-sud","algerie","angola","benin","burkina-faso","burundi","cameroun","cap-vert","congo","cote-d-ivoire","egypte","ethiopie","gabon","gambie","guinee","guinee-bissau","kenya","madagascar","maldives","mali","maroc","maurice","mauritanie","mozambique","namibie","niger","nigeria","ouganda","rdc","rwanda","senegal","seychelles","somalie","tanzanie","tchad","togo","tunisie","zanzibar"];
 		div1.innerHTML="";
 		for(var i=0;i<afrique.length;i++){
-			div1.innerHTML+="<a href='https://fr.wikipedia.org/wiki/"+afrique[i]+"' target='_blank'><span class='pays'>"+afrique[i]+"</span></a> ";
+			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-afrique-du-sud/voyager-"+afr_link[i]+"' target='_blank'><span class='pays'>"+afrique[i]+"</span></a> ";
 		}
 	}
 	
 	function aff_ads(){
 		var ameriquedusud=["Argentine","Bolivie","Brésil","Chili","Colombie","Équateur","Paraguay","Pérou","Uruguay","Vénézuela"];
-		var ads_link=[];
+		var ads_link=["argentine","bolivie","bresil","chili","colombie","equateur","paraguay","pérou","uruguay","venezuela"];
 		div1.innerHTML="";
 		for(var i=0;i<ameriquedusud.length;i++){
-			div1.innerHTML+="<a href='https://fr.wikipedia.org/wiki/"+ameriquedusud[i]+"' target='_blank'><span class='pays'>"+ameriquedusud[i]+"</span></a> ";
+			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-afrique-du-sud/voyager-"+ads_link[i]+"' target='_blank'><span class='pays'>"+ameriquedusud[i]+"</span></a> ";
 		}
 	}
 	
 	function aff_oce(){
 		var oceanie=["Australie","Nouvelle-Zélande"];
-		var oce_link=[];
+		var oce_link=["australie","nouvelle-zelande"];
 		div1.innerHTML="";
 		for(var i=0;i<oceanie.length;i++){
-			div1.innerHTML+="<a href='https://fr.wikipedia.org/wiki/"+oceanie[i]+"' target='_blank'><span class='pays'>"+oceanie[i]+"</span></a> ";
+			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-afrique-du-sud/voyager-"+oce_link[i]+"' target='_blank'><span class='pays'>"+oceanie[i]+"</span></a> ";
 		}
 	}
 	
