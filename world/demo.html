@@ -2,39 +2,16 @@
 <html lang="fr">
 <head>
 <style>
-.pays{
-font-family:sans-serif;
-background:green;
-padding:10px;
-line-height:2.5em;
-border-radius:5px;
-transition:0.5s;
+#divif{
+	text-align:center;
+	padding-top:100px;
 }
-
-.pays:hover{
-background:#00ff00;
-}
-
-a{color:white;}
-a:link{text-decoration:none;}
-a:visited{text-decoration:none;}
-a:hover{text-decoration:none;}
-a:active{text-decoration:none;}
 </style>
 </head>
 <body>
-<div id="div1">résultats</div>
-<script>
-	function aff_eur(){
-		var div1=document.getElementById("div1");
-		var europe=["Açores","Albanie","Allemagne","Angleterre","Arménie","Autriche","Baléares","Belgique","Biélorussie","Bosnie-Herzégovine","Bulgarie","Canaries","Crète","Croatie","Danemark","Ecosse","Espagne","Estonie","Finlande","Géorgie","Grèce","Hongrie","Irlande","Islande","Italie","Kosovo","Lettonie","Liechtenstein","Lituanie","Luxembourg","Macédoine","Madère","Malte","Moldavie","Monténégro","Norvège","Pays-Bas","Pays-de-Galles","Pologne","Portugal","République Tchèque","Roumanie","Russie","Sardaigne","Serbie","Sicile","Slovaquie","Slovénie","Suède","Suisse","Ukraine"];
-		var eur_link=["",]
-		div1.innerHTML="";
-		for(var i=0;i<europe.length;i++){
-			div1.innerHTML+="<a href='"+eur_link[i]+"' target='_blank'><span class='pays'>"+europe[i]+"</span></a> ";
-		}
-	}
-	aff_eur();
+<div id="divif">
+	<iframe src="index.html" width="1160px" height="745px"></iframe>
+</div>
 </script>
 </body>
 </html>
