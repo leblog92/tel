@@ -11,6 +11,8 @@ html,body{
 
 body{
 	overflow:hidden;
+	background:linear-gradient(white,royalblue);
+	font-family:Consolas;
 }
 
 #cat{
@@ -24,15 +26,13 @@ body{
 	left:0;
 	bottom:0;
 }
+
 </style>
 <link rel="icon" href="https://em-content.zobj.net/source/apple/391/hibiscus_1f33a.png" type="image/png"/>
 </head>
 <body>
-
 <div id="div1">null</div>
-
-<img src="cat.png" width="150px" height="150px" id="cat"/>
-
+<img src="cat.png" width="150px" height="200px" id="cat"/>
 <script>
 var div1=document.getElementById("div1");
 var cat=document.getElementById("cat");
@@ -45,9 +45,8 @@ function coor(event){
 }
 
 window.onload=function() {
-  this.addEventListener("mousemove", coor);
+	this.addEventListener("mousemove", coor);
 }
-
 </script>
 </body>
 </html>
