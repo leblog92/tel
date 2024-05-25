@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>RTS Game Title</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+<style>
+html,body{
+	height:100%;
+	margin:0;
+}
+body{
+	background:#ccf;
+}
+.rubik-mono-one-regular{
+  font-family:"Rubik Mono One", monospace;
+  font-weight:400;
+  font-style:normal;
+}
+#div1{
+	font-size:40px;
+	position:fixed;
+	top:0;
+	left:0;
+}
+#div2{
+	font-size:40px;
+	position:fixed;
+	top:0;
+	right:0;
+}
+#div3{
+	font-size:40px;
+	position:fixed;
+	bottom:0;
+	left:0;
+}
+#div4{
+	font-size:40px;
+	position:fixed;
+	bottom:0;
+	right:0;
+}
+</style>
+</head>
+<body>
+<div id="div1" class="rubik-mono-one-regular"></div>
+<div id="div2" class="rubik-mono-one-regular">0</div>
+<div id="div3" class="rubik-mono-one-regular"></div>
+<div id="div4" class="rubik-mono-one-regular"></div>
+<svg width="100%" height="100%">
+<image xlink:href="meep.png" width="80" height="200"></image>
+</svg>
+<script>
+var ww=window.innerWidth;
+var wh=window.innerHeight;
+var div1=document.getElementById("div1");
+var div2=document.getElementById("div2");
+var div3=document.getElementById("div3");
+var div4=document.getElementById("div4");
+var seconds=0;
+function time(){
+	seconds++;
+	div2.innerHTML=seconds;
+}
+setInterval(time,1000);
+div1.innerHTML=ww+" "+wh;
+
+</script>
+</body>
+</html>
