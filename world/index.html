@@ -110,16 +110,16 @@ a:active{text-decoration:none;}
 	var div1=document.getElementById("div1");
 
 	function aff_eur(){
-		var europe=["Albanie","Allemagne","Angleterre","Arménie","Autriche","Belgique","Biélorussie","Bosnie-Herzégovine","Bulgarie","Croatie","Danemark","Écosse","Espagne","Estonie","Finlande","Géorgie","Grèce","Hongrie","Irlande","Islande","Italie","Kosovo","Lettonie","Liechtenstein","Lituanie","Luxembourg","Macédoine","Malte","Moldavie","Monténégro","Norvège","Pays-Bas","Pays-de-Galles","Pologne","Portugal","République&nbsp;Tchèque","Roumanie","Russie","Serbie","Slovaquie","Slovénie","Suède","Suisse","Ukraine"];
-		var eur_link=["albanie","allemagne","angleterre","armenie","autriche","belgique","bielorussie","bosnie-herzegovine","bulgarie","croatie","danemark","ecosse","espagne","estonie","finlande","georgie","grece","hongrie","irlande","islande","italie","kosovo","lettonie","liechtenstein","lituanie","luxembourg","macedoine","malte","moldavie","montenegro","norvege","pays-bas","pays-de-galles","pologne","portugal","republique-tcheque","roumanie","russie","serbie","slovaquie","slovenie","suede","suisse","ukraine"];
+		var europe=["Albanie","Allemagne","Angleterre","Arménie","Autriche","Belgique","Biélorussie","Bosnie-Herzégovine","Bulgarie","Croatie","Danemark","Écosse","Espagne","Estonie","Finlande","Géorgie","Grèce","Hongrie","Irlande","Islande","Italie","Kosovo","Lettonie","Lituanie","Luxembourg","Macédoine","Malte","Monténégro","Norvège","Pays-Bas","Pays-de-Galles","Pologne","Portugal","République&nbsp;Tchèque","Roumanie","Russie","Serbie","Slovaquie","Slovénie","Suède","Suisse","Ukraine"];
+		var eur_link=["albanie","allemagne","angleterre","armenie","autriche","belgique","bielorussie","bosnie-herzegovine","bulgarie","croatie","danemark","ecosse","espagne","estonie","finlande","georgie","grece","hongrie","irlande","islande","italie","kosovo","lettonie","lituanie","luxembourg","macedoine","malte","montenegro","norvege","pays-bas","pays-de-galles","pologne","portugal","republique-tcheque","roumanie","russie","serbie","slovaquie","slovenie","suede","suisse","ukraine"];
 		div1.innerHTML="";
 		for(var i=0;i<europe.length;i++){
 			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-"+eur_link[i]+"' target='_blank'><span class='pays'>"+europe[i]+"</span></a> ";
 		}
 	}
 	function aff_adn(){
-		var ameriquedunord=["Belize","Canada","Costa Rica","Cuba","États-Unis","Guatemala","Haïti","Honduras","Mexique","Nicaragua","Panama","Porto Rico","République&nbsp;Dominicaine","Salvador"];
-		var adn_link=["belize","canada","costa-rica","cuba","etats-unis","guatemala","haiti","honduras","mexique","nicaragua","panama","porto-rico","republique-dominicaine","salvador"];
+		var ameriquedunord=["Belize","Canada","Costa Rica","Cuba","États-Unis","Guatemala","Haïti","Honduras","Mexique","Panama","Porto Rico","République&nbsp;Dominicaine","Salvador"];
+		var adn_link=["belize","canada","costa-rica","cuba","etats-unis","guatemala","haiti","honduras","mexique","panama","porto-rico","republique-dominicaine","salvador"];
 		div1.innerHTML="";
 		for(var i=0;i<ameriquedunord.length;i++){
 			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-"+adn_link[i]+"' target='_blank'><span class='pays'>"+ameriquedunord[i]+"</span></a> ";
@@ -127,8 +127,8 @@ a:active{text-decoration:none;}
 	}
 	
 	function aff_amo(){
-		var asie=["Afghanistan","Arabie&nbsp;saoudite","Arménie","Azerbaïdjan","Bangladesh","Bhoutan","Birmanie","Brunei","Cambodge","Chine","Chypre","Corée&nbsp;du&nbsp;Nord","Corée&nbsp;du&nbsp;Sud","Émirats&nbsp;arabes&nbsp;unis","Hong-Kong","Inde","Indonésie","Iran","Israël","Japon","Jordanie","Kazakhstan","Kirghizistan","Koweït","Laos","Liban","Malaisie","Mongolie","Népal","Oman","Ouzbékistan","Pakistan","Palestine","Philippines","Rajasthan","Singapour","Sri&nbsp;Lanka","Syrie","Taiwan","Thaïlande","Turquie","Vietnam","Yémen"];
-		var amo_link=["afghanistan","arabie-saoudite","armenie","azerbaedjan","bangladesh","bhoutan","birmanie","brunei","cambodge","chine","chypre","coree-nord","coree-sud","emirats-arabes-unis","hong-kong","inde","indonesie","iran","israel","japon","jordanie","kazakhstan","kirghizistan","koweit","laos","liban","malaisie","mongolie","nepal","oman","ouzbekistan","pakistan","palestine","philippines","rajasthan","singapour","sri-lanka","syrie","taiwan","thailande","turquie","vietnam","yemen"];
+		var asie=["Afghanistan","Arabie&nbsp;saoudite","Arménie","Azerbaïdjan","Bangladesh","Bhoutan","Birmanie","Cambodge","Chine","Chypre","Corée&nbsp;du&nbsp;Nord","Corée&nbsp;du&nbsp;Sud","Émirats&nbsp;arabes&nbsp;unis","Hong-Kong","Inde","Indonésie","Iran","Israël","Japon","Jordanie","Kazakhstan","Kirghizistan","Koweït","Laos","Liban","Malaisie","Mongolie","Népal","Oman","Ouzbékistan","Pakistan","Palestine","Philippines","Rajasthan","Singapour","Sri&nbsp;Lanka","Syrie","Taiwan","Thaïlande","Turquie","Vietnam","Yémen"];
+		var amo_link=["afghanistan","arabie-saoudite","armenie","azerbaedjan","bangladesh","bhoutan","birmanie","cambodge","chine","chypre","coree-nord","coree-sud","emirats-arabes-unis","hong-kong","inde","indonesie","iran","israel","japon","jordanie","kazakhstan","kirghizistan","koweit","laos","liban","malaisie","mongolie","nepal","oman","ouzbekistan","pakistan","palestine","philippines","rajasthan","singapour","sri-lanka","syrie","taiwan","thailande","turquie","vietnam","yemen"];
 		div1.innerHTML="";
 		for(var i=0;i<asie.length;i++){
 			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-"+amo_link[i]+"' target='_blank'><span class='pays'>"+asie[i]+"</span></a> ";
@@ -136,8 +136,8 @@ a:active{text-decoration:none;}
 	}
 
 	function aff_afr(){
-		var afrique=["Afrique&nbsp;du&nbsp;Sud","Algérie","Angola","Bénin","Burkina&nbsp;Faso","Burundi","Cameroun","Cap-Vert","Congo","Côte&nbsp;d'Ivoire","Djibouti","Egypte","Ethiopie","Gabon","Gambie","Ghana","Guinée","Kenya","Lesotho","Madagascar","Mali","Maroc","Mauritanie","Mozambique","Namibie","Niger","Nigeria","Ouganda","RDC","Rwanda","Sénégal","Somalie","Soudan","Tanzanie","Tchad","Togo","Tunisie","Zambie"];
-		var afr_link=["afrique-du-sud","algerie","angola","benin","burkina-faso","burundi","cameroun","cap-vert","congo","cote-d-ivoire","djibouti","egypte","ethiopie","gabon","gambie","ghana","guinee","kenya","lesotho","madagascar","mali","maroc","mauritanie","mozambique","namibie","niger","nigeria","ouganda","rdc","rwanda","senegal","somalie","soudan","tanzanie","tchad","togo","tunisie","zambie"];
+		var afrique=["Afrique&nbsp;du&nbsp;Sud","Algérie","Angola","Bénin","Burkina&nbsp;Faso","Cameroun","Cap-Vert","Congo","Côte&nbsp;d'Ivoire","Djibouti","Egypte","Ethiopie","Gabon","Ghana","Guinée","Kenya","Lesotho","Madagascar","Mali","Maroc","Mauritanie","Mozambique","Namibie","Niger","Nigeria","Ouganda","RDC","Rwanda","Sénégal","Somalie","Soudan","Tanzanie","Tchad","Togo","Tunisie","Zambie"];
+		var afr_link=["afrique-du-sud","algerie","angola","benin","burkina-faso","cameroun","cap-vert","congo","cote-d-ivoire","djibouti","egypte","ethiopie","gabon","ghana","guinee","kenya","lesotho","madagascar","mali","maroc","mauritanie","mozambique","namibie","niger","nigeria","ouganda","rdc","rwanda","senegal","somalie","soudan","tanzanie","tchad","togo","tunisie","zambie"];
 		div1.innerHTML="";
 		for(var i=0;i<afrique.length;i++){
 			div1.innerHTML+="<a href='https://catalogue.mediatheque-rueilmalmaison.fr/voyager-"+afr_link[i]+"' target='_blank'><span class='pays'>"+afrique[i]+"</span></a> ";
